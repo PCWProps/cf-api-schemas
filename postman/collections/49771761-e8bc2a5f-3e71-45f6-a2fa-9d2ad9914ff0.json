@@ -10255,7 +10255,7 @@
 							}
 						],
 						"url": {
-							"raw": "https://api.cloudflare.com/client/v4/accounts/{{accountId}}/gateway/lists",
+							"raw": "https://api.cloudflare.com/client/v4/accounts/{{accountId}}/gateway/lists?accountId ={{",
 							"protocol": "https",
 							"host": [
 								"api",
@@ -10269,6 +10269,12 @@
 								"{{accountId}}",
 								"gateway",
 								"lists"
+							],
+							"query": [
+								{
+									"key": "accountId ",
+									"value": "{{"
+								}
 							]
 						},
 						"description": "Retrieves all Gateway lists configured for the account. Gateway lists are collections of domains, IP addresses, or other items used in Gateway rules for filtering and policy enforcement.\n\n**Required Parameters:**\n- `accountId` (path parameter): Your Cloudflare account identifier\n\n**Optional Query Parameters:**\n- `page` (integer): Page number for pagination\n- `per_page` (integer): Number of results per page (default: 20, max: 100)\n\n**Response Fields:**\n- `id` (string): Unique identifier for the list\n- `name` (string): Display name of the list\n- `description` (string): Description of the list's purpose\n- `type` (string): Type of items in the list (DOMAIN, IP, URL, EMAIL, etc.)\n- `items` (array): Array of list items with their values\n- `count` (integer): Number of items in the list\n- `created_at` (string): ISO 8601 timestamp of creation\n- `updated_at` (string): ISO 8601 timestamp of last update\n\n**Common Use Cases:**\n- View all configured block lists and allow lists\n- Audit Gateway list configurations\n- Export list configurations for backup\n- Check which lists are available for use in rules\n\n**Important Notes:**\n- Lists can contain up to 1,000 items for most types\n- Large lists may be paginated in the response\n- Lists are referenced by ID in Gateway rules"
