@@ -10255,7 +10255,7 @@
 							}
 						],
 						"url": {
-							"raw": "https://api.cloudflare.com/client/v4/accounts/{{accountId}}/gateway/lists?accountId ={{",
+							"raw": "https://api.cloudflare.com/client/v4/accounts/{{accountId}}/gateway/lists?accountId ={{vault:accountId}}",
 							"protocol": "https",
 							"host": [
 								"api",
@@ -10273,7 +10273,7 @@
 							"query": [
 								{
 									"key": "accountId ",
-									"value": "{{"
+									"value": "{{vault:accountId}}"
 								}
 							]
 						},
