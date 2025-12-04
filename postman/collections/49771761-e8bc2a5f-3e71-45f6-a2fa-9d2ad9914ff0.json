@@ -10248,7 +10248,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "{{vault:CF_GLOBAL_KEY}}",
+									"value": "{{vault:Cloudflare_API_Token}}",
 									"type": "string"
 								}
 							]
